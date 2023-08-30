@@ -1,5 +1,7 @@
+#include "gcd.h"
+
 int main(int argc, char const *argv[])
 {
-    /* code */
+    gcd::tests();
     return 0;
 }
