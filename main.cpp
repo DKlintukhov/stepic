@@ -5,6 +5,8 @@
 #include "string.h"
 #include "shared_ptr.h"
 #include "scoped_ptr.h"
+#include "flatten.h"
+#include "same_type.h"
 #include <iostream>
 
 // struct Base
