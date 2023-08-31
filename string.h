@@ -1,5 +1,8 @@
+#pragma once
+
 #include <cstddef>
 #include <cstring>
+#include <algorithm>
 
 namespace my_string
 {
@@ -19,6 +22,22 @@ namespace my_string
             std::strcpy(this->str, str);
         }
 
+        String(const String &other)
+        {
+            size = other.size;
+            str = new char[size + 1];
+            std::strcpy(str, other.str);
+        }
+
+        String &operator=(const String &other)
+        {
+            if (this != &other)
+            {
+                String(other).swap(*this);
+            }
+            return *this;
+        }
+
         ~String()
         {
             delete[] this->str;
@@ -35,6 +54,12 @@ namespace my_string
         }
 
     private:
+        void swap(String &other)
+        {
+            std::swap(size, other.size);
+            std::swap(str, other.str);
+        }
+
         void init_str(size_t index, char *str, char c)
         {
             for (size_t i = 0; i != index; i++)
