@@ -5,7 +5,7 @@
 int main(int argc, char const *argv[])
 {
     gcd::tests();
-   // rotate::tests();
+    rotate::tests();
     mystrlen::tests();
 
     return 0;
